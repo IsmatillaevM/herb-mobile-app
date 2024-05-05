@@ -1,0 +1,241 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+    list-style-type: none;
+
+ }
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* .container {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+} */
+
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+}
+
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+.nameApp{
+    font-size: 25px;
+    font-style: italic;
+    color: #4F6F52;
+}
+.hrHead{
+    width: 100%;
+    height: 1px;
+    background-color: #4F6F52;
+}
+.searchBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 10vh;
+}
+
+.searchInput {
+    width: 80%;
+    height: 30px;
+    border: 1px solid #878787;
+    border-radius: 5px;
+    padding-right: 40px; /* Add padding to prevent text from being hidden behind the icon */
+    padding-left: 10px; /* Add some padding inside the input field */
+}
+
+.searchButton {
+    position: absolute;
+    right: 12%; /* Adjust the percentage as necessary to position the icon correctly */
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.searchButton img {
+    width: 20px; /* Size of the icon */
+    height: 20px; /* Size of the icon */
+}
+.sender_block{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    background-color: #4F6F52;
+    border-bottom: 1px solid #ffffff;
+
+}
+.sendButton {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.sendButton img {
+    width: 20px; /* Size of the icon */
+    height: 20px; /* Size of the icon */
+}
+.randomHerbs {
+    display: flex;
+    justify-content: flex-start; /* Выравнивание элементов слева */
+    align-items: center;
+    width: 100%;
+    height: 20vh; /* Высота по вашему выбору */
+    overflow-x: scroll; /* Включение горизонтальной прокрутки */
+}
+
+.randomHerbs {
+    display: flex;
+    justify-content: flex-start; /* Aligns items to the start */
+    align-items: center;
+    width: 100%;
+    height: 21vh; /* Adjusted height */
+    overflow-x: auto; /* Allows horizontal scrolling */
+    background-color: #E8F5E9; /* Light background for contrast */
+    padding: 10px 0; /* Adds padding vertically */
+}
+
+.herbList {
+    display: flex;
+    padding-left: 20px; /* Adds padding on the left for spacing */
+}
+
+.herbItem {
+    flex: none; /* Prevents stretching */
+    width: 120px; /* Larger width for better display */
+    height: 125px; /* Larger height for square appearance */
+    margin-right: 20px; /* More space between items */
+    background-color: #FFFFFF; /* Light background for each item */
+    color: black; /* Text color */
+    display: flex;
+    flex-direction: column; /* Stacks image and text vertically */
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Adds shadow for depth */
+    transition: transform 0.3s ease; /* Smooth transform on hover */
+}
+
+.herbItem:hover {
+    transform: scale(1.05); /* Slightly enlarges the item on hover */
+}
+
+.herbImg {
+    width: 80%; /* Adjusts image width relative to its container */
+    height: 70%; /* Maintains aspect ratio */
+    border-radius: 5px; /* Rounds the corners of the image */
+    margin-bottom: 5px; /* Space between image and text */
+}
+
+.herbName {
+    text-align: center; /* Centers the text */
+    font-size: 14px; /* Adjusts font size */
+    padding: 0 5px; /* Adds padding to prevent overflow */
+}
+
+.searchResults {
+    width: 100%;
+    height: 50vh; /* Увеличенная высота для лучшего отображения */
+    overflow-y: scroll;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: #f9f9f9;
+}
+
+.resultItem {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.resultTitle {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+
+
+.resultDescriptionContainer {
+    height: 100px; /* Фиксированная высота для контейнера описания */
+    overflow-y: auto; /* Включение вертикальной прокрутки для длинных текстов */
+    margin-bottom: 5px;
+}
+
+.resultDescription {
+    font-size: 14px;
+    color: #666;
+}
+
+.controlButtons{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #4F6F52;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.controlButtonsSon{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.slideBUtton{
+    background: none;
+    border: none;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+.slideBUtton img{
+    width: 100%;
+    height: 100%;
+}
+.answer_block{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 75vh;
+   
+}
+
+
+
+
+
+
+
+

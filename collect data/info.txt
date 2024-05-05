@@ -1,0 +1,8 @@
+pip install python-Levenshtein
+pip install fuzzywuzzy
+pip install "fastapi[all]"
+pip install transformers
+pip install pydantic
+
+
+

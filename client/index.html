@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>UZTIBHUB AI</title>
+</head>
+<body>
+    <div id="vueapp" class="container">
+        <div class="header">
+            <p class="nameApp">UZTIBHUB AI</p>
+            <img src="./img/logo.png" alt="UZTIBHUB Logo" class="logo">
+        </div>
+      <div v-show="currentSlide === 'slideOne'" class="slide" id="slideOne">
+        <hr class="hrHead">
+        
+        <div class="searchBlock">
+            <input v-model="searchInput" class="searchInput" type="text" placeholder="So'rovingizni kiriting ...">
+            <button @click="search()" class="searchButton">
+                <img src="./img/searchIcon.png" alt="Search">
+            </button>
+        </div>
+       
+        <div class="randomHerbs">
+            <ul class="herbList">
+              <li v-for="herb in randomHerbs" :key="herb.id" @click="randomSearch(herb.title)">
+                <div class="herbItem">
+                  <img :src="herb.img_link" :alt="herb.title" class="herbImg">
+                  <p class="herbName">{{ herb.title }}</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <hr class="hrHead">
+          <ul>
+            <li v-for="result in answerQuery" :key="result.id">
+              <div class="searchResults">
+                <div class="resultItem">
+                  <h3 class="resultTitle">{{ result.title }}</h3>
+                  <img :src="result.img_link" :alt="result.title" class="herbImg">
+                  <div class="resultDescriptionContainer">
+                    <p class="resultDescription">{{ result.description }}</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+      </div>
+      <div  v-show="currentSlide === 'slideTwo'" class="slide" id="slideTwo" style="display: none;">
+       <div class="answer_block">
+        
+        <ul>
+          <li v-for="result in answerQuery" :key="result.id">
+            <div class="searchResults">
+              <div class="resultItem">
+                <h3 class="resultTitle">{{ result.title }}</h3>
+                <img :src="result.img_link" :alt="result.title" class="herbImg">
+                <div class="resultDescriptionContainer">
+                  <p class="resultDescription">{{ result.description }}</p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul> 
+       </div>
+          <div class="sender_block">
+            <input class="searchInput" type="text" v-model="msg_query" placeholder="Simptmolarni yozing">
+            <button class="sendButton" @click="answering"><img src="./img/send.png" alt=""></button>
+          </div> 
+      </div> 
+      <div class="controlButtons">
+        <div class="controlButtonsSon">
+            <button @click="showSlideOne()" class="slideBUtton"><img src="./img/search-interface-symbol.png" alt=""></button>
+            <button @click="showSlideTwo()" class="slideBUtton"><img src="./img/bubble-chat.png" alt=""></button>
+        </div>
+    </div> 
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./index.js"></script>
+
+   
+</body>
+</html>
