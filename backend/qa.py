@@ -31,15 +31,26 @@ class QA_Class:
         
     
     def answering(self, symptoms: list):
+        
         symptoms = QA_Class.check_symptoms(symptoms)
         symptoms = ' '.join(symptoms)
-        symptoms = self.vectorizer.transform([symptoms])
-      
-        result = self.model.kneighbors(symptoms.todense(), n_neighbors=5)
-        result = result[1][0]
-        result = [search_herb(i) for i in result]
         
-        return result
+        if not symptoms:
+            return [
+                {
+                        'title': "Ma'lumot topilmadi",
+                        'description': '',
+                        'img_link': 'https://qph.cf2.quoracdn.net/main-qimg-9c8ddf2a7e5584ff8f8d9e71cc99c484-lq',
+                        'disease': ''
+            
+                }
+            ]
+        else :
+            symptoms = self.vectorizer.transform([symptoms])
+            result = self.model.kneighbors(symptoms.todense(), n_neighbors=5)  
+            result = result[1][0]
+            result = [search_herb.connect_db()[i]['data'] for i in result]
+            return result
             
             
 

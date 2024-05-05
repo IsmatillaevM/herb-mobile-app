@@ -3,6 +3,6 @@ pip install fuzzywuzzy
 pip install "fastapi[all]"
 pip install transformers
 pip install pydantic
-
+pip install scikit-learn==1.1.3
 
 
